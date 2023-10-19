@@ -65,7 +65,8 @@ instruction_t *fselector(char *line)
 			inst->f = pint;
 		if (strcmp(inst->opcode, "pop") == 0)
 			inst->f = pop;
-
+		if (strcmp(inst->opcode, "swap") == 0)
+			inst->f = swap;
 	}
 	return (inst);
 }

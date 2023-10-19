@@ -35,3 +35,22 @@ void pop(stack_t **stack, unsigned int line_n)
 	*stack = (*stack)->next;
 	free(temp);
 }
+/**
+ * swap - swaps the last two integars
+ * @stack: the stack
+ * @line_n: the line number the read is currently at
+ * Return: void
+ */
+void swap(stack_t **stack, unsigned int line_n)
+{
+	int temp;
+
+	if ((*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	temp = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = temp;
+}
