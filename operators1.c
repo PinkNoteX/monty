@@ -13,11 +13,11 @@ void push(stack_t **stack, unsigned int line_n)
 
 	parg = strtok(NULL, "\n\t ");
 	if (!intcheck(parg))
-		fprintf(stdout, "L%u: usage: push integer\n", line_n), exit(EXIT_FAILURE);
+		fprintf(stderr, "L%u: usage: push integer\n", line_n), exit(EXIT_FAILURE);
 	value = atoi(parg);
 	n = malloc(sizeof(stack_t));
 	if (n == NULL)
-		fprintf(stdout, "Error: malloc failed\n"), exit(EXIT_FAILURE);
+		fprintf(stderr, "Error: malloc failed\n"), exit(EXIT_FAILURE);
 	n->n = value;
 	n->next = NULL;
 	n->prev = NULL;
@@ -104,7 +104,7 @@ void pint(stack_t **stack, unsigned int line_n)
         (void)line_n;
 
         if (*stack == NULL)
-		fprintf(stdout, "L%d: can't pint, stack empty\n", line_n), exit(EXIT_FAILURE);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_n), exit(EXIT_FAILURE);
 	printf("%d\n", (*stack)->n);
 }
 

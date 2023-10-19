@@ -46,7 +46,7 @@ instruction_t *fselector(char *line)
 
 	inst = malloc(sizeof(*inst));
 	if (inst == NULL)
-		fprintf(stdout, "Error: malloc failed\n"), exit(EXIT_FAILURE);
+		fprintf(stderr, "Error: malloc failed\n"), exit(EXIT_FAILURE);
 	opcode = opcodeg(line);
 	inst->opcode = opcode;
 	inst->f = NULL;
