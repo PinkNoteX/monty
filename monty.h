@@ -49,6 +49,6 @@ void stack(stack_t **stack, unsigned int line_n);
 void queue(stack_t **stack, unsigned int line_n);
 void freeline(char *line);
 void pint(stack_t **stack, unsigned int line_n);
-void pop(stack_t **stack, unsigned int line_n)
+void pop(stack_t **stack, unsigned int line_n);
 
 #endif
