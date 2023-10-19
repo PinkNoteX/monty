@@ -89,7 +89,7 @@ void add(stack_t **stack, unsigned int line_n)
  * @line_n: the line number the read is currently at
  * Return: void
  */
-void nop(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_n)
 {
 	(void)stack;
 	(void)line_n;
