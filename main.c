@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 #include <stdio.h>
 int SandQChecker = 1;
 int main(int argc, char **argv)
