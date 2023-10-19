@@ -59,3 +59,27 @@ void swap(stack_t **stack, unsigned int line_n)
 	(*stack)->n = (*stack)->next->n;
 	(*stack)->next->n = temp;
 }
+/**
+ * add - adds the last two elements of the stack
+ * @stack: the stack
+ * @line_n: the line number the read is currently at
+ * Return: void
+ */
+void add(stack_t **stack, unsigned int line_n)
+{
+	int thesum;
+
+	if ((*stack) == NULL)
+        {
+                fprintf(stderr, "L%d: can't add, stack too short\n", line_n);
+                exit(EXIT_FAILURE);
+        }
+	if ((*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	thesum = (*stack)->next->n + (*stack)->n;
+	pop(stack, line_n);
+	(*stack)->n = thesum;
+}
