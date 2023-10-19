@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * intcheck - check if given str is int or not
+ * @str: int to check
+ * Return: 1 or 0
+ */
 int intcheck(char *str)
 {
 	int x = 0;
@@ -16,6 +21,11 @@ int intcheck(char *str)
 	}
 	return (1);
 }
+/**
+ * opcodeg - gets opcode
+ * @str: line to get from
+ * Return: opecode
+ */
 char *opcodeg(char *str)
 {
 	char *opcode;
@@ -24,6 +34,11 @@ char *opcodeg(char *str)
 	return (opcode);
 
 }
+/**
+ * fselector - parses the given line and handles the function given
+ * @line: line to be parsed and checked
+ * Return: void
+ */
 instruction_t *fselector(char *line)
 {
 	instruction_t *inst;
@@ -41,7 +56,7 @@ instruction_t *fselector(char *line)
 		if (strcmp(inst->opcode, "push") == 0)
 			inst->f = push;
 		if (strcmp(inst->opcode, "pall") == 0)
-                        inst->f = pall;
+			inst->f = pall;
 	}
 	return (inst);
 }

@@ -1,4 +1,10 @@
 #include "monty.h"
+/**
+ * push - pushes integar into stack be it in queue or stack mode
+ * @stack: the stack
+ * @line_n: the line number the read is currently at
+ * Return: void
+ */
 void push(stack_t **stack, unsigned int line_n)
 {
 	stack_t *tmp, *n;
@@ -35,6 +41,12 @@ void push(stack_t **stack, unsigned int line_n)
 		}
 	}
 }
+/**
+ * pall - prints the stack
+ * @stack: the stack
+ * @line_n: the line number the read is currently at
+ * Return: void
+ */
 void pall(stack_t **stack, unsigned int line_n)
 {
 	stack_t *temp;
@@ -47,18 +59,35 @@ void pall(stack_t **stack, unsigned int line_n)
 		temp = temp->next;
 	}
 }
+/**
+ * stack - checks if in LIFO mode
+ * @stack: the stack
+ * @line_n: the line number the read is currently at
+ * Return: void
+ */
 void stack(stack_t **stack, unsigned int line_n)
 {
 	(void)line_n;
 	(void)stack;
 	SandQChecker = 1;
 }
+/**
+ * queue - checks if in FIFO mode
+ * @stack: the stack
+ * @line_n: the line number the read is currently at
+ * Return: void
+ */
 void queue(stack_t **stack, unsigned int line_n)
 {
 	(void)stack;
 	(void)line_n;
 	SandQChecker = 0;
 }
+/**
+ * freeline - frees line if not NULL
+ * @line: line to be freed
+ * Return: void
+ */
 void freeline(char *line)
 {
 	if (line)
