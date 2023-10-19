@@ -70,10 +70,10 @@ void add(stack_t **stack, unsigned int line_n)
 	int thesum;
 
 	if ((*stack) == NULL)
-        {
-                fprintf(stderr, "L%d: can't add, stack too short\n", line_n);
-                exit(EXIT_FAILURE);
-        }
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
 	if ((*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_n);
@@ -82,4 +82,15 @@ void add(stack_t **stack, unsigned int line_n)
 	thesum = (*stack)->next->n + (*stack)->n;
 	pop(stack, line_n);
 	(*stack)->n = thesum;
+}
+/**
+ * nop - it does nothing
+ * @stack: the stack
+ * @line_n: the line number the read is currently at
+ * Return: void
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_n;
 }

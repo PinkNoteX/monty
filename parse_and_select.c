@@ -69,6 +69,8 @@ instruction_t *fselector(char *line)
 			inst->f = swap;
 		if (strcmp(inst->opcode, "add") == 0)
 			inst->f = add;
+		if (strcmp(inst->opcode, "nop") == 0)
+			inst->f = nop;
 	}
 	return (inst);
 }
