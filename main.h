@@ -32,11 +32,13 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+extern int SandQChecker;
 void stackfree(stack_t *head);
 instruction_t *fselector(char *line);
 char *opcodeg(char *str);
 int intcheck(char *str);
 void push(stack_t **stack, unsigned int line_n);
 void pall(stack_t **stack, unsigned int line_n);
+void stack(stack_t **stack, unsigned int line_n);
+void queue(stack_t **stack, unsigned int line_n);
 #endif
