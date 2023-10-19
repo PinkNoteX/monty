@@ -1,9 +1,11 @@
 #include "main.h"
+#include <stdio.h>
 int SandQChecker = 1;
 int main(int argc, char **argv)
 {
 	FILE *in;
 	unsigned int line_n = 0;
+	ssize_t ggetline = 1;
 	size_t getline_size = 0;
 	char *line = NULL;
 	stack_t *head = NULL;
@@ -14,8 +16,11 @@ int main(int argc, char **argv)
 	in = fopen(argv[1], "r");
 	if (in == NULL)
 		fprintf(stdout, "Error: Can't open file %s\n", argv[1]), exit(EXIT_FAILURE);
-	while (getline(&line, &getline_size, in) != -1)
+	while (1)
 	{
+		ggetline = getline(&line, &getline_size, in);
+		if (ggetline == -1)
+			break;
 		line_n++;
 		inst = fselector(line);
 		if (inst->opcode == NULL)
