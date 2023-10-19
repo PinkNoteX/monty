@@ -1,6 +1,12 @@
 #include "monty.h"
 #include <stdio.h>
 int SandQChecker = 1;
+/**
+ * main - main function for monty
+ * @argc: number of args
+ * @argv: pointer to args
+ * Return: 0 or exit value
+ */
 int main(int argc, char **argv)
 {
 	FILE *in;
@@ -29,8 +35,7 @@ int main(int argc, char **argv)
 			if (line)
 				free(line);
 			line = NULL;
-			continue;
-		}
+			continue; }
 		if (inst->f != NULL)
 			inst->f(&head, line_n);
 		else
@@ -39,19 +44,16 @@ int main(int argc, char **argv)
 			if (line)
 				free(line);
 			if (head)
-				/**/
+				stackfree(head);
 			free(inst);
 			fclose(in);
-			exit(EXIT_FAILURE);
-		}
+			exit(EXIT_FAILURE); }
 		if (line)
 			free(line);
 		line = NULL;
-		free(inst);
-	}
+		free(inst); }
 	if (line)
 		free(line);
-	/**/
+	stackfree(head);
 	fclose(in);
-	return (0);
-}
+	return (0); }
