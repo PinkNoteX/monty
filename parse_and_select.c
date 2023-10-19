@@ -63,6 +63,8 @@ instruction_t *fselector(char *line)
 			inst->f = queue;
 		if (strcmp(inst->opcode, "pint") == 0)
 			inst->f = pint;
+		if (strcmp(inst->opcode, "pop") == 0)
+			inst->f = pop;
 
 	}
 	return (inst);
