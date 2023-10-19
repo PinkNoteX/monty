@@ -5,7 +5,6 @@ int main(int argc, char **argv)
 	FILE *in;
 	unsigned int line_n = 0;
 	size_t getline_size = 0;
-	ssize_t ggetline;
 	char *line = NULL;
 	stack_t *head = NULL;
 	instruction_t *inst = NULL;
@@ -15,13 +14,10 @@ int main(int argc, char **argv)
 	in = fopen(argv[1], "r");
 	if (in == NULL)
 		fprintf(stdout, "Error: Can't open file %s\n", argv[1]), exit(EXIT_FAILURE);
-	while (1)
+	while (getline(&line, &getline_size, in) != -1)
 	{
-		ggetline = getline(&line, &getline_size, in);
 		line_n++;
 		inst = fselector(line);
-		if (ggetline == -1)
-			break;
 		if (inst->opcode == NULL)
 		{
 			free(inst);
@@ -38,7 +34,7 @@ int main(int argc, char **argv)
 			if (line)
 				free(line);
 			if (head)
-				//free stack..
+				/**/
 			free(inst);
 			fclose(in);
 			exit(EXIT_FAILURE);
@@ -50,7 +46,7 @@ int main(int argc, char **argv)
 	}
 	if (line)
 		free(line);
-	// free stack
+	/**/
 	fclose(in);
 	return (0);
 }
