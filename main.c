@@ -1,6 +1,5 @@
 #include "monty.h"
 #include <stdio.h>
-int SandQChecker = 1;
 /**
  * main - main function for monty
  * @argc: number of args
@@ -31,9 +30,7 @@ int main(int argc, char **argv)
 		inst = fselector(line);
 		if (inst->opcode == NULL)
 		{
-			free(inst);
-			if (line)
-				free(line);
+			free(inst), freeline(line);
 			line = NULL;
 			continue; }
 		if (inst->f != NULL)
@@ -41,19 +38,14 @@ int main(int argc, char **argv)
 		else
 		{
 			fprintf(stdout, "L%d: unknown instruction %s\n", line_n, inst->opcode);
-			if (line)
-				free(line);
+			freeline(line);
 			if (head)
 				stackfree(head);
 			free(inst);
 			fclose(in);
 			exit(EXIT_FAILURE); }
-		if (line)
-			free(line);
+		freeline(line);
 		line = NULL;
 		free(inst); }
-	if (line)
-		free(line);
-	stackfree(head);
-	fclose(in);
+	freeline(line), stackfree(head), fclose(in);
 	return (0); }

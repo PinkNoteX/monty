@@ -59,3 +59,8 @@ void queue(stack_t **stack, unsigned int line_n)
 	(void)line_n;
 	SandQChecker = 0;
 }
+void freeline(char *line)
+{
+	if (line)
+		free(line);
+}
