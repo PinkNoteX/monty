@@ -57,6 +57,10 @@ instruction_t *fselector(char *line)
 			inst->f = push;
 		if (strcmp(inst->opcode, "pall") == 0)
 			inst->f = pall;
+		if (strcmp(inst->opcode, "stack") == 0)
+                        inst->f = stack;
+		if (strcmp(inst->opcode, "queue") == 0)
+                        inst->f = queue;
 	}
 	return (inst);
 }
