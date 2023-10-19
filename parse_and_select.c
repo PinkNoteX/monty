@@ -58,9 +58,9 @@ instruction_t *fselector(char *line)
 		if (strcmp(inst->opcode, "pall") == 0)
 			inst->f = pall;
 		if (strcmp(inst->opcode, "stack") == 0)
-                        inst->f = stack;
+			inst->f = stack;
 		if (strcmp(inst->opcode, "queue") == 0)
-                        inst->f = queue;
+			inst->f = queue;
 	}
 	return (inst);
 }
