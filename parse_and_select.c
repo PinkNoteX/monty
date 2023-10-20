@@ -77,6 +77,8 @@ instruction_t *fselector(char *line)
 			inst->f = divide;
 		if (strcmp(inst->opcode, "mul") == 0)
 			inst->f = mul;
+		if (strcmp(inst->opcode, "mod") == 0)
+			inst->f = modu;
 	}
 	return (inst);
 }

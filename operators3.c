@@ -61,3 +61,27 @@ void mul(stack_t **stack, unsigned int line_n)
 	pop(stack, line_n);
 	(*stack)->n = tmp;
 }
+/**
+ * modu - preforms mod operator
+ * @stack: the stack
+ * @line_n: the line number the read is currently at
+ * Return: void
+ */
+void modu(stack_t **stack, unsigned int line_n)
+{
+	int tmp;
+
+	if ((*stack) == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	tmp = (*stack)->next->n % (*stack)->n;
+	pop(stack, line_n);
+	(*stack)->n = tmp;
+}
