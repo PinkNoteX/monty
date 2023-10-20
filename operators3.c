@@ -51,6 +51,7 @@ void divide(stack_t **stack, unsigned int line_n)
 void mul(stack_t **stack, unsigned int line_n)
 {
 	int tmp;
+
 	if ((*stack) == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_n);

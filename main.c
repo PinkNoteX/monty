@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 			break;
 		line_n++;
 		inst = fselector(line);
-		if (inst->opcode == NULL)
+		if (inst->opcode == NULL || inst->opcode[0] == '#')
 		{
 			free(inst), freeline(line);
 			line = NULL;
