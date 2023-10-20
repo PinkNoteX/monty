@@ -101,7 +101,7 @@ void pchar(stack_t **stack, unsigned int line_n)
 	if (!isprint((*stack)->n))
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_n);
-		exit(EXIT_FAILURE)
+		exit(EXIT_FAILURE);
 	}
 	fprintf(stdout, "%c\n", (*stack)->n);
 }
