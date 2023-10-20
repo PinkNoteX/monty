@@ -9,7 +9,7 @@ void sub(stack_t **stack, unsigned int line_n)
 {
 	int tmp;
 
-	if ((*stack)->next == NULL || (*stack) == NULL)
+	if ((*stack) == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_n);
 		exit(EXIT_FAILURE);
@@ -28,14 +28,14 @@ void divide(stack_t **stack, unsigned int line_n)
 {
 	int tmp;
 
+	if ((*stack) == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
 	if ((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_n);
-		exit(EXIT_FAILURE);
-	}
-	if ((*stack)->next == NULL || (*stack) == NULL)
-	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", line_n);
 		exit(EXIT_FAILURE);
 	}
 	tmp = (*stack)->next->n / (*stack)->n;
@@ -51,7 +51,7 @@ void divide(stack_t **stack, unsigned int line_n)
 void mul(stack_t **stack, unsigned int line_n)
 {
 	int tmp;
-	if ((*stack)->next == NULL || (*stack) == NULL)
+	if ((*stack) == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_n);
 		exit(EXIT_FAILURE);
