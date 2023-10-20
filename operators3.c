@@ -85,3 +85,24 @@ void modu(stack_t **stack, unsigned int line_n)
 	pop(stack, line_n);
 	(*stack)->n = tmp;
 }
+/**
+ * pchar - outputs the char at the head
+ * @stack: the stack
+ * @line_n: the line number the read is currently at
+ * Return: void
+ */
+void pchar(stack_t **stack, unsigned int line_n)
+{
+	if ((*stack) == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	if (!isprint((*stack)->n))
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_n);
+		exit(EXIT_FAILURE)
+	}
+	fprintf(stdout, "%c\n", (*stack)->n);
+}
+

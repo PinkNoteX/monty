@@ -57,5 +57,7 @@ void sub(stack_t **stack, unsigned int line_n);
 void divide(stack_t **stack, unsigned int line_n);
 void mul(stack_t **stack, unsigned int line_n);
 void modu(stack_t **stack, unsigned int line_n);
+void pchar(stack_t **stack, unsigned int line_n);
+
 
 #endif
