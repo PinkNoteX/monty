@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		if (ggetline == -1)
 			break;
 		line_n++;
-		printf("%d\n", inst->opcode[0]);
+		inst = fselector(line);
 		if (inst->opcode == NULL || inst->opcode[0] == '#')
 		{
 			free(inst), freeline(line);
