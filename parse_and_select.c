@@ -50,7 +50,6 @@ instruction_t *fselector(char *line)
 	opcode = opcodeg(line);
 	inst->opcode = opcode;
 	inst->f = NULL;
-
 	if (inst->opcode != NULL)
 	{
 		if (strcmp(inst->opcode, "push") == 0)
@@ -80,7 +79,5 @@ instruction_t *fselector(char *line)
 		if (strcmp(inst->opcode, "mod") == 0)
 			inst->f = modu;
 		if (strcmp(inst->opcode, "pchar") == 0)
-			inst->f = pchar;
-	}
-	return (inst);
-}
+			inst->f = pchar; }
+	return (inst); }
