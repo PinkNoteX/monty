@@ -19,12 +19,12 @@ void sub(stack_t **stack, unsigned int line_n)
 	(*stack)->n = tmp;
 }
 /**
- * div - divides the two elements at the head of the stack
+ * divide - divides the two elements at the head of the stack
  * @stack: the stack
  * @line_n: the line number the read is currently at
  * Return: void
  */
-void div(stack_t **stack, unsigned int line_n)
+void divide(stack_t **stack, unsigned int line_n)
 {
 	int tmp;
 
@@ -51,7 +51,7 @@ void div(stack_t **stack, unsigned int line_n)
 void mul(stack_t **stack, unsigned int line_n)
 {
 	int tmp;
-	if ((*stack)->next = NULL || (*stack) == NULL)
+	if ((*stack)->next == NULL || (*stack) == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_n);
 		exit(EXIT_FAILURE);
