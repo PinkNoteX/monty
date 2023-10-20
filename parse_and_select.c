@@ -41,10 +41,9 @@ char *opcodeg(char *str)
  */
 instruction_t *fselector(char *line)
 {
-	instruction_t *inst;
+	instruction_t *inst = malloc(sizeof(*inst));
 	char *opcode;
 
-	inst = malloc(sizeof(*inst));
 	if (inst == NULL)
 		fprintf(stderr, "Error: malloc failed\n"), exit(EXIT_FAILURE);
 	opcode = opcodeg(line);
@@ -79,5 +78,7 @@ instruction_t *fselector(char *line)
 		if (strcmp(inst->opcode, "mod") == 0)
 			inst->f = modu;
 		if (strcmp(inst->opcode, "pchar") == 0)
-			inst->f = pchar; }
+			inst->f = pchar;
+		if (strcmp(inst->opcode, "pstr") == 0)
+			inst->f = pstr;	}
 	return (inst); }
