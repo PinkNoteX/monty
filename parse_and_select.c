@@ -71,6 +71,12 @@ instruction_t *fselector(char *line)
 			inst->f = add;
 		if (strcmp(inst->opcode, "nop") == 0)
 			inst->f = nop;
+		if (strcmp(inst->opcode, "sub") == 0)
+			inst->f = sub;
+		if (strcmp(inst->opcode, "div") == 0)
+			inst->f = div;
+		if (strcmp(inst->opcode, "mul") == 0)
+			inst->f = mul;
 	}
 	return (inst);
 }
